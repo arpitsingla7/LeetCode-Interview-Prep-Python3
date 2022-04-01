@@ -8,10 +8,8 @@ class Solution:
             if bracket not in mapper:
                 stack.append(bracket)
                 continue
-            if len(stack)!=0:
-                openBracket = stack.pop()
-                if openBracket != mapper[bracket]:
-                    return False
+            if stack and stack[-1]==mapper[bracket]:
+                stack.pop()
             else:
                 return False
         
