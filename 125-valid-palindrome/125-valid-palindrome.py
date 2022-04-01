@@ -4,12 +4,11 @@ class Solution:
         l = 0
         r = len(s)-1
         while l<r:
-            if s[l]==" " or not s[l].isalnum():
+            while (l<r) and (s[l]==" " or not s[l].isalnum()):
                 l+=1
-                continue
-            if s[r] == " " or not s[r].isalnum():
+                
+            while (r>l) and (s[r] == " " or not s[r].isalnum()):
                 r-=1
-                continue
             
             ch1 = s[l].lower()
             ch2 = s[r].lower()
