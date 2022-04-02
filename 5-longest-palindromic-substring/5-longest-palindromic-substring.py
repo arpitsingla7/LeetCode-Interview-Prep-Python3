@@ -1,22 +1,29 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         
-        self.res = s[0]
-        self.resLen = 0
-        def findres(l, r):
-            while (l>=0 and r<len(s)) and (s[l] == s[r]):
-                if (r-l+1)>self.resLen:
-                    self.res = s[l:r+1]
-                    self.resLen = r-l+1
+        #odd case
+        res = s[0]
+        resLen = 0
+        for c in range(len(s)):
+            l = c-1
+            r = c+1
+            while l>=0 and r<len(s) and s[l]==s[r]:
+                if resLen<(r-l+1):
+                    res = s[l:r+1]
+                    resLen = r-l+1
+                    
                 l-=1
                 r+=1
             
-            return self.res
+            l = c
+            r = c+1
+            while l>=0 and r<len(s) and s[l]==s[r]:
+                if resLen<(r-l+1):
+                    res = s[l:r+1]
+                    resLen = r-l+1
+                    
+                l-=1
+                r+=1
+            
         
-        
-        for c in range(len(s)):  
-            odd = findres(c-1, c+1)
-            even = findres(c, c+1)            
-            result = odd if len(odd)>len(even) else even
-        
-        return result
+        return res
