@@ -7,6 +7,19 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         
+        
+        #space comp: O(1):
+        slow, fast = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        
+        return False
+        
+        
+        #space compelxity: O(n)
         nodeSet = set()
         node = head
         while node:
