@@ -5,10 +5,10 @@ class Solution:
         res = defaultdict(list)
         
         for word in strs:
-            charList = [0]*26
-            for ch in word:
-                charList[ord(ch)-ord("a")]+=1
-            
-            res[tuple(charList)].append(word)
+            charSet = [0]*26
+            for s in word:
+                charSet[ord(s)-ord("a")]+=1
+                
+            res[tuple(charSet)].append(word)
         
         return res.values()
