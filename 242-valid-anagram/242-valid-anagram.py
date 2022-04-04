@@ -9,4 +9,5 @@ class Solution:
         
         if len(t)==len(s):
             return True
+        return False
         
