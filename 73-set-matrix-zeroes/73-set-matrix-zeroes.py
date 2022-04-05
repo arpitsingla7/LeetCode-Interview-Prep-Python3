@@ -16,7 +16,7 @@ class Solution:
                     if r>0:
                         matrix[r][0] = 0
                         
-                    if r==0:
+                    else:
                         rowZero = True
                         
         
