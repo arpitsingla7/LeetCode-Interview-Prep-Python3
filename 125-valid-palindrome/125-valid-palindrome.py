@@ -22,11 +22,9 @@ class Solution:
     
         
     def isalpha(self, letter):
-        if ((ord("A")<=ord(letter) and ord(letter)<=ord("Z")) 
-           or (ord("a")<=ord(letter) and ord(letter)<=ord("z"))
-           or (ord("0")<=ord(letter) and ord(letter)<=ord("9"))):
-            return True
-        return False
+        return (ord("A")<= ord(letter) <=ord("Z") or 
+                ord("a")<= ord(letter) <=ord("z") or 
+                ord("0")<= ord(letter) <=ord("9"))
         
             
         
