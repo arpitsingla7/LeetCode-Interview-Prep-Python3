@@ -8,8 +8,13 @@ class Solution:
             if i.isalnum():
                 sPali+=i.lower()
         
-        l, r = 0, len(sPali)
+        l, r = 0, len(sPali)-1
         
-        return sPali[:] == sPali[::-1]
+        while l<r:
+            if sPali[l]!=sPali[r]:
+                return False
+            l+=1
+            r-=1
+        return True
         
         
