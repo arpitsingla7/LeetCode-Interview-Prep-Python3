@@ -2,16 +2,13 @@ class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         
         
-        for row in matrix:
-            if row[0]<=target<=row[-1]:
-                l, r = 0, len(row)-1
-                while l<=r:
-                    m = l+(r-l)//2
-                    
-                    if target==row[m]:
+        m = len(matrix)
+        n = len(matrix[0])
+        for i in range(0, m):
+            if(target <= matrix[i][n-1]):
+                for j in range(0, n):
+                    if(target == matrix[i][j]):
                         return True
-                    elif target<row[m]:
-                        r=m-1
                     else:
-                        l=m+1
+                        pass
         return False
