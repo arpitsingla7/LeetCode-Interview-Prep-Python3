@@ -26,22 +26,17 @@ class Solution:
             else:
                 
                 m = l+(r-l)//2
-                # if target==nums[m]:
-                #     return m
+                if target==nums[m]:
+                    return m
 
                 if nums[l]<=nums[m]:
-                    if target==nums[m]:
-                        return m
-                    elif target<nums[l] or target>nums[m]:
+                    if target<nums[l] or target>nums[m]:
                         l=m+1
                     else:
                         r=m-1
                 
                 else:
-                    if target==nums[m]:
-                        return m
-                    
-                    elif target>nums[r] or target<nums[m]:
+                    if target>nums[r] or target<nums[m]:
                         r = m-1
                     
                     else:
