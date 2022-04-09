@@ -38,7 +38,6 @@ class Solution:
             first = node1
             second = node2
         
-        return head
         
         
         
