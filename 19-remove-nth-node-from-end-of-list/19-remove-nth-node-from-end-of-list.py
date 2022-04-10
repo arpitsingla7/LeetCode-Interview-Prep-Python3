@@ -12,8 +12,8 @@ class Solution:
             length+=1
             node = node.next
             
-        # if n>length:
-        #     return 
+        if n>length:
+            return 
         if n==length:
             return head.next
         
@@ -22,6 +22,7 @@ class Solution:
             node = node.next
         
         node.next = node.next.next
+        
         return head
             
         
