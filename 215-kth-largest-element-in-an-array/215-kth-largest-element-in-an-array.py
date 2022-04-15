@@ -10,6 +10,8 @@ class Solution:
         
         def quickSelect(l, r):
             #base case
+            if l==r:
+                return nums[l]
             
             pivot, p = nums[r], l
             
