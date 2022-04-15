@@ -10,15 +10,16 @@ class Solution:
         self.count = 0
         self.res = 0
         def dfs(root):
-            if not root:
+            if not root or self.count==k:
                 return 
             
+            print(root.val)
             dfs(root.left)
             
             self.count+=1
             if k==self.count:
                 self.res = root.val
-                return 
+                return
             
             dfs(root.right)
         
