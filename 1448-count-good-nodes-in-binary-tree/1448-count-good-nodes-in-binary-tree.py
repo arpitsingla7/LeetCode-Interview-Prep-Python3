@@ -8,23 +8,17 @@ class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         
         self.res = 0
-        def dfs(root, path, m):
+        def dfs(root, m):
             if not root:
-                return ""
+                return
             
-            # path += str(root.val) + ","
             m = max(m, root.val)
             if m<=root.val:
                 self.res+=1
-            # print(m, m<=root.val)
-            # path.append(root.val)
-
-            dfs(root.left, path, m)
             
-            dfs(root.right, path, m)
+            dfs(root.left, m)
+            dfs(root.right, m)
             
-            
-            return path
         
-        dfs(root, "", root.val)
+        dfs(root, root.val)
         return self.res
