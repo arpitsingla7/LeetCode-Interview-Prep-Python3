@@ -26,7 +26,7 @@ class Solution:
                     q.append(node.right)
                 
             
-            res.append(temp.copy())
+            res.append(temp)
             
         return res
                 
