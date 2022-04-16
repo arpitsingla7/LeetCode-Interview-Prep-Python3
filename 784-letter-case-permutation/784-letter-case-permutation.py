@@ -10,17 +10,18 @@ class Solution:
                 res.append("".join(copy))
                 return 
             
+            substr.append(s[i].lower())
+            dfs(i+1)
+            substr.pop()
             if s[i].isalpha():
-                substr.append(s[i].lower())
-                dfs(i+1)
-                substr.pop()
+                
                 substr.append(s[i].upper())
                 dfs(i+1)
                 substr.pop()
-            else:
-                substr.append(s[i])
-                dfs(i+1)
-                substr.pop()
+            # else:
+            #     substr.append(s[i])
+            #     dfs(i+1)
+            #     substr.pop()
             
         
         dfs(0)
