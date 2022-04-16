@@ -4,17 +4,15 @@ class Solution:
         res = []
         subset = []
         def backTrack(i):
-            
             if i>=len(nums):
                 res.append(subset.copy())
                 return 
             
-            #includes the num[i]
+            #including the no 
             subset.append(nums[i])
             backTrack(i+1)
             
-            
-            #does not include that num[i]
+            #not including
             subset.pop()
             backTrack(i+1)
         
