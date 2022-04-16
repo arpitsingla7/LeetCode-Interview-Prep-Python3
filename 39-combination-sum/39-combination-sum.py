@@ -1,7 +1,7 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         
-        candidates.sort()
+        # candidates.sort()
         res = []
         curSet = []
         
