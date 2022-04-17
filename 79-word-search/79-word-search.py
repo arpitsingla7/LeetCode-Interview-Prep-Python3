@@ -1,6 +1,21 @@
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         
+        
+        m = len(board)
+        n = len(board[0])
+        
+        boardCount = Counter("".join(["".join(row) for row in board]))
+        print(boardCount)
+        
+        wordCount = Counter(word)
+        print(wordCount)
+        
+        for w, v in wordCount.items():
+            if v > boardCount[w] or not boardCount.get(w, False):
+                return False
+        
+        
         ROWS, COLS = len(board), len(board[0])
         path = set()
         self.res = False
