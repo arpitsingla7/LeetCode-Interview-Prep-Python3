@@ -20,9 +20,9 @@ class Solution:
                 if z==c:
                     check[2] = 1
         
-        triplets = triplets[0:p]
+        # triplets = triplets[0:p]
         
-        if sum(check)!=3 or len(triplets)==0:
+        if sum(check)!=3 or p==0:
             return False
         
         
