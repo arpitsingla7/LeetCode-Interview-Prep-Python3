@@ -7,8 +7,6 @@ class Solution:
         for ind, t in enumerate(triplets):
             x, y, z = t[0], t[1], t[2]
             if (x<=a and y<=b and z<=c):
-                if p!=ind:
-                    triplets[p] = triplets[ind]
                 p+=1
             
                 if x==a:
@@ -20,11 +18,9 @@ class Solution:
                 if z==c:
                     check[2] = 1
         
-        # triplets = triplets[0:p]
         
         if sum(check)!=3 or p==0:
             return False
-        
         
         return True
         
