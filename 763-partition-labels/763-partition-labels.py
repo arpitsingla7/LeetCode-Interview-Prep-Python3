@@ -5,25 +5,25 @@ class Solution:
         
         for ind, c in enumerate(s):
             if c in hashMap:
-                hashMap[c][1] = ind
+                hashMap[c]= ind
                 continue
             
-            hashMap[c] = [ind, ind]
+            hashMap[c] = ind
             
             
-        l = hashMap[s[0]][0]
+        l = 0
         res = []
         while l<len(s):
             
-            r = hashMap[s[l]][1]
+            r = hashMap[s[l]]
             curSet = set(s[l:r+1])
             
             while curSet:
                 tempSet = set()
                 for c in curSet:
-                    if hashMap[c][1]>r:
+                    if hashMap[c]>r:
                         tempr = r
-                        r = hashMap[c][1]
+                        r = hashMap[c]
                         tempSet.update(set(s[tempr:r+1]))
                 
                 curSet = tempSet
