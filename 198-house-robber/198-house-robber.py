@@ -8,14 +8,12 @@ class Solution:
             return max(nums[0]+nums[2], nums[1])
         
         cache = {}
-        self.res = -1
         
         def dfs(ind, curRes):
             if ind in cache:
                 return cache[ind]
             
             if ind>=len(nums):
-                # self.res = max(self.res, curRes)
                 return 
             
             curRes+=nums[ind]
