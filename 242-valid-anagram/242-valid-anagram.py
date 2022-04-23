@@ -6,7 +6,7 @@ class Solution:
         
         charS = set(s)
         
-        for ch in s:
+        for ch in charS:
             if s.count(ch) != t.count(ch):
                 return False
         
