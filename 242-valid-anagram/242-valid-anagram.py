@@ -4,16 +4,14 @@ class Solution:
         if len(s)!=len(t):
             return False
         
-        freqS = {}
-        freqT = {}
+        charS = set(s)
+        
         for ch in s:
-            freqS[ch] = 1 + freqS.get(ch, 0)
+            if s.count(ch) != t.count(ch):
+                return False
         
-        for ch in t:
-            freqT[ch] = 1 + freqT.get(ch, 0)
-            
-        
-        return freqS==freqT
+        return True
+                
     
             
             
