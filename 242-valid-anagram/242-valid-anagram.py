@@ -1,12 +1,21 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+    
+        if len(s)!=len(t):
+            return False
         
-        sCount = set(s)
+        freqS = {}
+        freqT = {}
+        for ch in s:
+            freqS[ch] = 1 + freqS.get(ch, 0)
         
-        for i in sCount:
-            if s.count(i)!=t.count(i):
-                return False
-        
-        return True if len(s)==len(t) else False
-                
+        for ch in t:
+            freqT[ch] = 1 + freqT.get(ch, 0)
             
+        
+        return freqS==freqT
+    
+            
+            
+        
+        
