@@ -1,24 +1,32 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         
+        #count the freq
         
-        #step 1: make a count dict
+        #make an arr of len of nums 
+        #append to the index of arr as count and return from behind
+        
+        if len(nums)<=1:
+            return nums
+        
         countMap = {}
         for i in nums:
             countMap[i] = 1 + countMap.get(i, 0)
             
-        print(countMap)
-        #step 2: fill the countArr
-        countArr = [[] for i in range(len(nums)+1)]
-        for i, val in countMap.items():
-            countArr[val].append(i)
+        resArr = [[] for i in range(len(nums)+1)]
         
-        print(countArr)
-        #step 3: find the first k 
+        for i, val in countMap.items():
+            resArr[val].append(i)
+        
+        print(resArr)
         res = []
-        for i in range(len(countArr)-1, 0, -1):
-            res.extend(countArr[i])
-            
-            if len(res)==k:
+        for i in range(len(resArr)-1, 0, -1):
+            print(i)
+            if len(res)!=k:
+                res.extend(resArr[i])
+            else:
                 return res
         
+        return res
+            
+            
