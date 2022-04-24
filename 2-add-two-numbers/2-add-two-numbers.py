@@ -21,20 +21,11 @@ class Solution:
             num = total%10
             carry = total//10
             
-            # if l1:
-            #     l1 = l1.next
-            # if l2:
-            #     l2 = l2.next
-            
             tail.next = ListNode(num)
             tail = tail.next
             l1 = l1.next if l1 else 0
             l2 = l2.next if l2 else 0
             
-            # if l1 or l2 or carry!=0:
-            #     tail.next = ListNode()
-            #     tail = tail.next  
-        
         return dummy.next
             
             
