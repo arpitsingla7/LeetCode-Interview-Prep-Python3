@@ -15,10 +15,10 @@ class Solution:
             left = dfs(root.left)
             right = dfs(root.right)
             
-            if left>right+1 or right>left+1:
+            if abs(left-right)>=2:
                 self.res = False
             
             return 1 + max(left, right)
-        
+
         dfs(root)
         return self.res
