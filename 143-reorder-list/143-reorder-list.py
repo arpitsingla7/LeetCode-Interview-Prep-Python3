@@ -9,41 +9,36 @@ class Solution:
         Do not return anything, modify head in-place instead.
         """
         
-        
+        if not head: return 
         
         slow, fast = head, head
+        
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
             
-        second = slow.next
-        prev = None
-        while second:
-            nxt = second.next
-            second.next = prev
-            prev = second
-            second = nxt
+        #reverse the list
+        list2 = slow.next
+        prev, slow.next = None, None
+        while list2:
+            nxt = list2.next
+            list2.next = prev
+            prev = list2
+            list2 = nxt
         
-        second = prev
-        first = head
-        slow.next = None
+        list2 = prev
+        list1 = head
+        
+        while list2:
+            nxt1, nxt2 = list1.next, list2.next
+            list1.next, list2.next = list2, nxt1
+            list1, list2 = nxt1, nxt2
         
         
-        while second:
-            node1 = first.next
-            node2 = second.next
             
-            first.next = second
-            second.next = node1
-            first = node1
-            second = node2
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            
+            
+            
+            
+            
         
