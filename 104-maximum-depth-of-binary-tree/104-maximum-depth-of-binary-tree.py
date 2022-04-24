@@ -7,26 +7,13 @@
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         
+        #dfs
+        def dfs(root):
+            if not root:
+                return 0
+            
+            return 1 + max(dfs(root.left), dfs(root.right))
+            
         
-        #bfs solution:
-        if not root:
-            return 0
         
-        queue = deque([root])
-        res = 0
-        while queue:
-            length = len(queue)
-   
-            for i in range(length):
-                node = queue.popleft()
-                
-                if node.left:
-                    queue.append(node.left)
-                
-                if node.right:
-                    queue.append(node.right)
-            
-            res+=1
-        return res
-            
-            
+        return dfs(root)
