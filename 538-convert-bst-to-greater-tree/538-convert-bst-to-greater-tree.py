@@ -7,15 +7,17 @@
 class Solution:
     def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         
-        self.cur = 0
+        cur = 0
         def dfs(root):
             if not root:
                 return 
             
             dfs(root.right)
+            nonlocal cur
             temp = root.val
-            root.val = root.val+self.cur
-            self.cur += temp
+            root.val += cur
+            cur += temp
+            
             dfs(root.left)
         
         dfs(root)
