@@ -19,6 +19,8 @@ class Solution:
                 e+=1
             
             res = max(res, count)
+            if res>capacity:
+                return False
         
         return True if res<=capacity else False
                 
