@@ -12,8 +12,9 @@ class Solution:
             if not root:
                 return 
             
-            dfs(root.right)
             nonlocal cur
+            dfs(root.right)
+            
             temp = root.val
             root.val += cur
             cur += temp
