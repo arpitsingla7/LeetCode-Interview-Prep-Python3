@@ -3,11 +3,9 @@ class Solution:
         
         start = [(i[1], i[0]) for i in trips]
         start.sort(key = lambda i: i[0])
-        print(start)
+        
         end = [(i[2], i[0]) for i in trips]
         end.sort(key = lambda i: i[0])
-        print(end)
-        
         
         s, e = 0, 0
         res, count = 0, 0
@@ -16,7 +14,6 @@ class Solution:
             if start[s][0]<end[e][0]:
                 count+=start[s][1]
                 s+=1
-                
             else:
                 count-=end[e][1]
                 e+=1
@@ -24,3 +21,4 @@ class Solution:
             res = max(res, count)
         
         return True if res<=capacity else False
+                
