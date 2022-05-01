@@ -2,8 +2,8 @@ class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         
         res = nums[0]
-        tmp = nums[0]
-        for i in (nums[1:]):
+        tmp = 0
+        for i in nums:
             if tmp<0:
                 tmp = 0
                 
