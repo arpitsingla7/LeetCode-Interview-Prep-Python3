@@ -7,31 +7,17 @@
 class Solution:
     def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         
-        # 1, 2, 3, 5, 7, 10
-        #27,25,22,17,10, 10
-        self.total = 0
+        self.cur = 0
         def dfs(root):
             if not root:
                 return 
             
-            self.total+=root.val
-            dfs(root.left)
             dfs(root.right)
+            temp = root.val
+            root.val = root.val+self.cur
+            self.cur += temp
+            dfs(root.left)
         
         dfs(root)
-        
-        def greaterTree(root):
-            if not root:
-                return 
-        
-            greaterTree(root.left)
-            
-            temp = root.val
-            root.val = self.total
-            self.total -= temp
-            
-            greaterTree(root.right)
-        
-        greaterTree(root)
         return root
             
