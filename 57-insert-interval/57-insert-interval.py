@@ -1,8 +1,6 @@
 class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         
-        intervals.sort(key = lambda i:i[0])
-        print(intervals)
         res = []
         
         for i in range(len(intervals)):
