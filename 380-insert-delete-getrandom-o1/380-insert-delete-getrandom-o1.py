@@ -7,13 +7,16 @@ class RandomizedSet:
         self.numList = []
 
     def insert(self, val: int) -> bool:
-        if val not in self.hashMap:
+        res = val not in self.hashMap
+        if res:
             self.hashMap[val] = len(self.numList)
             self.numList.append(val)
-            return True
-        return False
+            
+        return res
 
     def remove(self, val: int) -> bool:
+        res = val in self.hashMap
+        
         if val in self.hashMap:
             #find ind of elem to be removed
             #switch values with last elem
@@ -27,9 +30,8 @@ class RandomizedSet:
             self.hashMap[lastVal] = indx
             self.numList.pop()
             del self.hashMap[val]
-            return True
         
-        return False
+        return res
             
         
 
