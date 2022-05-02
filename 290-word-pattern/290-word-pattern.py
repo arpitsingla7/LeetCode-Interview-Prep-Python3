@@ -2,7 +2,7 @@ class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         
         words = s.split(" ")
-        if len(pattern)>len(words):
+        if len(pattern)!=len(words):
             return False
         
         #each pattern maps to different word
