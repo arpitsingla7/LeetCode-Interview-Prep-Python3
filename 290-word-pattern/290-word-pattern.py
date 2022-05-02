@@ -5,29 +5,15 @@ class Solution:
         if len(pattern)!=len(words):
             return False
         
-        #each pattern maps to different word
-        hashMap = {}
-        hashSet = set()
-        for i, p in enumerate(pattern):
-            if p in hashMap:
-                if hashMap[p]!=words[i]:
-                    return False
-            else:
-                if words[i] in hashSet:
-                    return False
-                
-                hashMap[p] = words[i]
-                hashSet.add(words[i])
+        charToWord = {}
+        wordToChar = {}
+        
+        for c, w in zip(pattern, words):
+            if c in charToWord and charToWord[c]!=w:
+                return False
+            if w in wordToChar and wordToChar[w]!=c:
+                return False
+            charToWord[c] = w
+            wordToChar[w] = c
+        
         return True
-        #that mapping is consistent 
-#         w = 0
-#         while w<len(words):
-#             m = w%len(pattern)
-            
-#             if hashMap[pattern[m]]!=words[w]:
-#                 return False
-#             w+=1
-            
-#         return True if m==len(pattern)-1 else False
-            
-            
