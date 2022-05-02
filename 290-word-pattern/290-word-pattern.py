@@ -18,16 +18,16 @@ class Solution:
                 
                 hashMap[p] = words[i]
                 hashSet.add(words[i])
-        
+        return True
         #that mapping is consistent 
-        w = 0
-        while w<len(words):
-            m = w%len(pattern)
+#         w = 0
+#         while w<len(words):
+#             m = w%len(pattern)
             
-            if hashMap[pattern[m]]!=words[w]:
-                return False
-            w+=1
+#             if hashMap[pattern[m]]!=words[w]:
+#                 return False
+#             w+=1
             
-        return True if m==len(pattern)-1 else False
+#         return True if m==len(pattern)-1 else False
             
             
