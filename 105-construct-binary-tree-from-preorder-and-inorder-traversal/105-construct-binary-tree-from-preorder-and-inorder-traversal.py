@@ -7,19 +7,18 @@
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         
-        
-        def dfs(pre, ind):
-            if not pre or not ind:
-                return
+        def dfs(pre, inord):
+            if not pre or not inord:
+                return 
             
+            node = TreeNode(pre[0])
+            idx = inord.index(pre[0])
             
-            root = TreeNode(pre[0])
-            m = ind.index(pre[0])
+            node.left = dfs(pre[1: idx+1], inord[:idx])
+            node.right = dfs(pre[idx+1:], inord[idx+1:])
             
-            root.left = dfs(pre[1:m+1], ind[:m])
-            
-            root.right = dfs(pre[m+1:], ind[m+1:])
-            
-            return root
-        
+            return node
+    
         return dfs(preorder, inorder)
+        
+        
