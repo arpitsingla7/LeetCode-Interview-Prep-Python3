@@ -1,16 +1,18 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         
+        #sort the words 
         
-        #check solution for capital letters 
         
-        res = defaultdict(list)
+        #make a 26 letter arr
+        wordMap = defaultdict(list)
         
-        for word in strs:
+        for s in strs:
             letters = [0]*26
-            for ch in word:
+            
+            for ch in s:
                 letters[ord(ch)-ord("a")] += 1
             
-            res[tuple(letters)].append(word)
+            wordMap[tuple(letters)].append(s)
         
-        return res.values()
+        return wordMap.values()
