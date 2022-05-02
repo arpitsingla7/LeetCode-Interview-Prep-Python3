@@ -10,35 +10,22 @@ class Node:
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
         
-        hashMap = {}
         
-        def createList(node, orgNode):
-            
-            #base case:
-            if not orgNode:
-                node.next = None
-                hashMap[orgNode] = node.next
-                return 
-            
-            node.next = Node(orgNode.val)
-            hashMap[orgNode] = node.next
-            createList(node.next, orgNode.next)
-            
-                
-        dummy = Node(0)
-        tail = dummy
-        createList(tail, head)
-        
-        node = tail.next
-        orgNode = head
+        #map to show mappin from node to newNode
+        nodeMap = {} #old to new
+        node = head
         while node:
-            ran = hashMap[orgNode.random]
-            node.random = ran
+            nodeMap[node] = Node(node.val)
             node = node.next
-            orgNode = orgNode.next
         
-        return tail.next
+        node = head
+        while node:
+            newNode = nodeMap[node]
+            newNode.next = nodeMap[node.next] if node.next != None else None
+            if node.random:
+                newNode.random = nodeMap[node.random]
+            node = node.next
         
-        
-            
+        if not head: return None
+        return nodeMap[head]
             
