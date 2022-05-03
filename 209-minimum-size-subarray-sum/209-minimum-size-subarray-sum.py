@@ -11,11 +11,8 @@ class Solution:
                 tmp-=nums[l]
                 l+=1
             
-            if r<len(nums):
-                tmp+=nums[r]
-                r+=1
-            else:
-                r+=1
+            tmp += nums[r] if r<len(nums) else 0
+            r+=1
         
         return res if res!=len(nums)+1 else 0
             
