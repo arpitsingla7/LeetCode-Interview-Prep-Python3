@@ -4,7 +4,6 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         
-        numZero = 0
         length = len(nums)
         
         if 0 in nums:
@@ -13,7 +12,7 @@ class Solution:
             return nums
         
         for r in range(l+1, length):
-            if l!=r and nums[r]!=0:
+            if nums[r]:
                 nums[l], nums[r] = nums[r], nums[l]
                 while nums[l]!=0:
                     l+=1
