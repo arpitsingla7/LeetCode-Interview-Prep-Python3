@@ -48,8 +48,6 @@ class Solution:
                 grid[r][c-1]=2
                 q.append((r, c-1, tmp+1))
                 totalNotRot-=1
-            print(q)
-        print(totalNotRot)
         
         if totalNotRot!=0: return -1
         return res
