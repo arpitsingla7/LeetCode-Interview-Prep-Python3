@@ -3,8 +3,7 @@ class Solution:
         
         #initialize a queue with rotten tomatoes
         #find all the rotten tomatoes
-        rows = len(grid)
-        cols = len(grid[0])
+        rows, cols = len(grid), len(grid[0])
         totalNotRot = 0
         q = deque()
         
@@ -14,7 +13,6 @@ class Solution:
                     q.append((r,c,0))
                 elif grid[r][c]==1:
                     totalNotRot+=1
-        #number of rotten oranges = 
         
         def dfs(r, c):
             if (r<0 or c<0 or r>=rows or c>=cols or grid[r][c]==0 or grid[r][c]==2):
@@ -23,8 +21,6 @@ class Solution:
                 return True
         
         res = 0
-        #for loop to check all four direction for each rotten
-        #while q is not emplt
         while q:
             
             r, c, tmp = q.popleft()
