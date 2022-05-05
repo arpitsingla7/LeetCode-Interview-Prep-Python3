@@ -5,17 +5,14 @@ class Solution:
             return []
         
         truth = [0]*26
-        for ch in p:
-            truth[ord(ch)-ord("a")] += 1
-        
         newTruth = [0]*26
-        for ch in range(len(p)):
-            newTruth[ord(s[ch])-ord("a")]+=1
+        for i, ch in enumerate(p):
+            truth[ord(ch)-ord("a")] += 1
+            newTruth[ord(s[i])-ord("a")]+=1
         
         
         l, r = 0, len(p)
-        res = []
-        
+        res = [] 
         while r<=len(s):
             
             if newTruth==truth:
