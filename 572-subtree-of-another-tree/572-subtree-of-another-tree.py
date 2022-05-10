@@ -15,7 +15,7 @@ class Solution:
             if not node or self.res:
                 return "N"
             
-            path += str(node.val) + dfs(node.left, path) + dfs(node.right, path)
+            path = str(node.val) + dfs(node.left, path) + dfs(node.right, path)
             
             if path in hashMap:
                 self.res = True
