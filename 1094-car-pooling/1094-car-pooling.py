@@ -8,7 +8,7 @@ class Solution:
         end.sort(key = lambda i: i[0])
         
         s, e = 0, 0
-        res, count = 0, 0
+        count = 0
         
         while s<len(start):
             if start[s][0]<end[e][0]:
@@ -18,10 +18,8 @@ class Solution:
                 count-=end[e][1]
                 e+=1
             
-            # res = max(res, count)
             if count>capacity:
                 return False
         
-        # return True if count<=capacity else False
         return True
                 
