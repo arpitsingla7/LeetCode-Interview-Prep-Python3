@@ -21,7 +21,7 @@ class Solution:
         node = head
         while node:
             newNode = nodeMap[node]
-            newNode.next = nodeMap[node.next] if node.next != None else None
+            newNode.next = nodeMap[node.next] if node.next else None
             if node.random:
                 newNode.random = nodeMap[node.random]
             node = node.next
