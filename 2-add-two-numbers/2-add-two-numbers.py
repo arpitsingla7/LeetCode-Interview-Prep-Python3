@@ -18,10 +18,10 @@ class Solution:
             total = a+b+carry
             value = total%10
             carry = total//10
-            print(value)
             
             tail.next = ListNode(value)
             tail = tail.next
+            
             if l1:
                 l1 = l1.next if l1.next else 0
             if l2:   
