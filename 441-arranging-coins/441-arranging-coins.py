@@ -12,8 +12,7 @@ class Solution:
                 r = m-1
             elif s<n:
                 l = m+1
-                if m>res:
-                    res = m
+                res = max(res, m)
             else:
                 return m
             
