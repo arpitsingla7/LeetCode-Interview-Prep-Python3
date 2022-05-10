@@ -22,5 +22,6 @@ class Solution:
             if count>capacity:
                 return False
         
-        return True if count<=capacity else False
+        # return True if count<=capacity else False
+        return True
                 
