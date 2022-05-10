@@ -11,7 +11,7 @@ class Solution:
         self.res = True
         
         def dfs(root, curMin, curMax):
-            if not root:
+            if not root or not self.res:
                 return 
             
             if root.val>curMin and root.val<curMax:
