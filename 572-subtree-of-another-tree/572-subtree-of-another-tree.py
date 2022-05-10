@@ -9,20 +9,22 @@ class Solution:
         
         hashMap = {}
         self.res = False
-        def dfs(root, path):
-            if not root:
-                return "#"
+        
+        def dfs(node, path):
             
-            path += str(root.val) + "-" + dfs(root.left, path) + "-" + dfs(root.right, path)
+            if not node or self.res:
+                return "N"
+            
+            path += str(node.val) + dfs(node.left, path) + dfs(node.right, path)
             
             if path in hashMap:
                 self.res = True
             
             return path
         
-        subPath = dfs(subRoot, "")
-        hashMap[subPath] = 1
+        
+        hashMap[dfs(subRoot, "")] = 1
         dfs(root, "")
+        
         return self.res
-            
-            
+        
