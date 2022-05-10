@@ -18,8 +18,8 @@ class Solution:
                 count-=end[e][1]
                 e+=1
             
-            res = max(res, count)
-            if res>capacity:
+            # res = max(res, count)
+            if count>capacity:
                 return False
         
         return True if res<=capacity else False
