@@ -24,7 +24,7 @@ class Solution:
         if sum(check)!=3 or p==0:
             return False
         
-        return True
+        # return True
         
     
                 
