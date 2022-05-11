@@ -21,8 +21,8 @@ class Solution:
             if sum(check)==3:
                 return True
             
-        if sum(check)!=3 or p==0:
-            return False
+        
+        return False
         
         # return True
         
