@@ -18,7 +18,9 @@ class Solution:
                 if z==c:
                     check[2] = 1
         
-        
+            if sum(check)==3:
+                return True
+            
         if sum(check)!=3 or p==0:
             return False
         
